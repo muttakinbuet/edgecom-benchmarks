@@ -14,8 +14,12 @@ CESNA & 0.139 $\pm$ 0.008 & 0.145 $\pm$ 0.008 & 0.136 $\pm$ 0.019 & 0.139 $\pm$ 
 Edge-feature clustering & 0.171 $\pm$ 0.004 & 0.186 $\pm$ 0.003 & 0.121 $\pm$ 0.001 & 0.127 $\pm$ 0.001 \\
 \midrule
 \methodauto, no input features ($\lambda = 1$) & 0.198 $\pm$ 0.005 & 0.209 $\pm$ 0.004 & 0.174 $\pm$ 0.007 & 0.187 $\pm$ 0.003 \\
-\methodauto + input features & \textbf{0.221 $\pm$ 0.005} & \textbf{0.233 $\pm$ 0.004} & \textbf{0.204 $\pm$ 0.004} & \textbf{0.215 $\pm$ 0.005} \\
+\methodauto + input features & 0.221 $\pm$ 0.005 & \textbf{0.233 $\pm$ 0.004} & 0.204 $\pm$ 0.004 & 0.215 $\pm$ 0.005 \\
 \methodauto, no input features, shuffled & 0.139 $\pm$ 0.006 & 0.139 $\pm$ 0.006 & -- & -- \\
 \methodauto + input features, shuffled & 0.139 $\pm$ 0.006 & 0.139 $\pm$ 0.006 & -- & -- \\
+\midrule
+NOCD + averaged edge features, best of 3 restarts & 0.214 $\pm$ 0.009 & 0.227 $\pm$ 0.016 & 0.196 $\pm$ 0.007 & 0.192 $\pm$ 0.011 \\
+DynaResGCN + averaged edge features, best of 3 restarts & 0.199 $\pm$ 0.006 & 0.197 $\pm$ 0.013 & 0.188 $\pm$ 0.014 & 0.194 $\pm$ 0.005 \\
+\methodauto + input features, best of 3 restarts & \textbf{0.223 $\pm$ 0.003} & 0.233 $\pm$ 0.006 & \textbf{0.205 $\pm$ 0.006} & \textbf{0.215 $\pm$ 0.002} \\
 \bottomrule
 \end{tabular}
