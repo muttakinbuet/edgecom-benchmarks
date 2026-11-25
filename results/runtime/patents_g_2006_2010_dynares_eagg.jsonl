@@ -1,0 +1,3 @@
+{"seed": 0, "method": "dynares_eagg", "features": "edge_feats_title_abstract", "readout": "threshold", "onmi": 0.11705001383076499, "f1": 0.3382917097477449, "jaccard": 0.218296033624657, "predicted": 30, "seconds": 929.6}
+{"seed": 0, "method": "dynares_eagg", "features": "edge_feats_title_abstract", "readout": "edges", "onmi": 0.13282395024081795, "f1": 0.324299064348704, "jaccard": 0.20783318024449682, "predicted": 30, "seconds": 929.6}
+{"seed": 0, "method": "dynares_eagg", "features": "edge_feats_title_abstract", "readout": "union", "onmi": 0.1142270207653675, "f1": 0.33776575986501767, "jaccard": 0.21797779422009855, "predicted": 30, "seconds": 929.6}

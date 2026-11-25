@@ -1,0 +1,1 @@
+{"seed": 0, "method": "edge_kmeans", "features": "edge_feats_title_abstract", "readout": "edges", "onmi": 0.14885110503396184, "f1": 0.3703624688515583, "jaccard": 0.2445847225644085, "predicted": 30, "seconds": 120.3}

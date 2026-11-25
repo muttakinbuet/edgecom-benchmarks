@@ -1,0 +1,10 @@
+# Tested with Python 3.12 and the versions in brackets
+numpy>=1.24          # (2.5.3)
+scipy>=1.10          # (1.18.1)
+pandas>=2.0          # (3.0.6)
+scikit-learn>=1.3    # (1.9.1)
+torch>=2.0           # (2.14.1, CPU)
+networkx>=3.0        # (3.6.1)
+lxml>=4.9            # DBLP XML parsing
+sentence-transformers>=2.2   # (6.1.0) edge-text embeddings
+matplotlib>=3.7      # figures

@@ -1,0 +1,42 @@
+{
+ "edges": 132092,
+ "edges_with_subset_venue": 84112,
+ "ours": {
+  "onmi": 0.0803,
+  "f1": 0.4124,
+  "jaccard": 0.2695,
+  "predicted": 27.0,
+  "edge_accuracy": 0.3899,
+  "edge_accuracy_overlapping": 0.3797,
+  "distinct_venue_names": 15,
+  "edge_nmi_single_venue": 0.385
+ },
+ "nocd_eagg": {
+  "onmi": 0.1357,
+  "f1": 0.3816,
+  "jaccard": 0.2524,
+  "predicted": 25.0,
+  "edge_accuracy": 0.3993,
+  "edge_accuracy_overlapping": 0.3774,
+  "distinct_venue_names": 16,
+  "edge_nmi_single_venue": 0.4397
+ },
+ "author": {
+  "node": 1560,
+  "name": "Hongyuan Zha",
+  "degree": 30,
+  "venues": 13
+ },
+ "composition": {
+  "ours": {
+   "communities": 27,
+   "mean_effective_venues": 7.37,
+   "edge_weighted_effective_venues": 7.03
+  },
+  "nocd_eagg": {
+   "communities": 24,
+   "mean_effective_venues": 5.46,
+   "edge_weighted_effective_venues": 6.91
+  }
+ }
+}

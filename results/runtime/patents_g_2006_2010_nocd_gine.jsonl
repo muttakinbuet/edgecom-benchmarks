@@ -1,0 +1,3 @@
+{"seed": 0, "method": "nocd_gine", "features": "edge_feats_title_abstract", "readout": "threshold", "onmi": 0.09824212695777644, "f1": 0.27673900249174344, "jaccard": 0.175948840241051, "predicted": 30, "seconds": 1265.2}
+{"seed": 0, "method": "nocd_gine", "features": "edge_feats_title_abstract", "readout": "edges", "onmi": 0.09844219671065214, "f1": 0.2647693706175322, "jaccard": 0.16812887582417524, "predicted": 30, "seconds": 1265.2}
+{"seed": 0, "method": "nocd_gine", "features": "edge_feats_title_abstract", "readout": "union", "onmi": 0.09492550488490077, "f1": 0.27768161064458396, "jaccard": 0.1766330221214937, "predicted": 30, "seconds": 1265.2}

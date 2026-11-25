@@ -1,0 +1,21 @@
+\begin{tabular}{lccc}
+\toprule
+Method & \textsc{CS-Areas} & \textsc{CS-Systems} & \textsc{Random-30} \\
+\midrule
+NOCD & 0.259 & 0.238 & 0.205 \\
+NOCD-GAT & 0.270 & -- & -- \\
+Link communities & 0.019 & 0.037 & 0.044 \\
+DynaResGCN & 0.253 & 0.227 & 0.188 \\
+NOCD-GINE & 0.306 & 0.285 & 0.317 \\
+NOCD + averaged edge features & 0.362 & 0.331 & 0.418 \\
+NOCD + averaged edge features, shuffled & 0.116 & 0.113 & 0.091 \\
+DynaResGCN + averaged edge features & 0.338 & 0.308 & 0.401 \\
+CESNA & 0.238 & 0.240 & 0.224 \\
+Edge-feature clustering & 0.271 & 0.256 & 0.362 \\
+\midrule
+\methodauto, no input features ($\lambda = 1$) & 0.346 & 0.315 & 0.387 \\
+\methodauto + input features & \textbf{0.388$^{*}$} & \textbf{0.350$^{*}$} & \textbf{0.425} \\
+\methodauto, no input features, shuffled & 0.257 & 0.236 & 0.205 \\
+\methodauto + input features, shuffled & 0.257 & 0.236 & 0.205 \\
+\bottomrule
+\end{tabular}

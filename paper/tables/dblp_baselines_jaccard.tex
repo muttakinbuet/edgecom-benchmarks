@@ -1,0 +1,22 @@
+\begin{tabular}{lcccc}
+\toprule
+Method & Title & Title + abstract & Title, outside & Title + abs., outside \\
+\midrule
+NOCD & \multicolumn{4}{c}{0.158 $\pm$ 0.005 (no edge features)} \\
+NOCD-GAT & \multicolumn{4}{c}{0.165 $\pm$ 0.007 (no edge features)} \\
+Link communities & \multicolumn{4}{c}{0.010 $\pm$ 0.000 (no edge features)} \\
+DynaResGCN & \multicolumn{4}{c}{0.154 $\pm$ 0.008 (no edge features)} \\
+\midrule
+NOCD-GINE & 0.213 $\pm$ 0.006 & 0.223 $\pm$ 0.007 & 0.181 $\pm$ 0.008 & 0.164 $\pm$ 0.058 \\
+NOCD + averaged edge features & 0.248 $\pm$ 0.009 & 0.255 $\pm$ 0.008 & 0.219 $\pm$ 0.010 & 0.217 $\pm$ 0.008 \\
+NOCD + averaged edge features, shuffled & 0.063 $\pm$ 0.003 & 0.064 $\pm$ 0.002 & -- & -- \\
+DynaResGCN + averaged edge features & 0.228 $\pm$ 0.005 & 0.230 $\pm$ 0.005 & 0.206 $\pm$ 0.011 & 0.204 $\pm$ 0.012 \\
+CESNA & 0.144 $\pm$ 0.007 & 0.149 $\pm$ 0.007 & 0.132 $\pm$ 0.011 & 0.140 $\pm$ 0.014 \\
+Edge-feature clustering & 0.193 $\pm$ 0.002 & 0.204 $\pm$ 0.001 & 0.125 $\pm$ 0.003 & 0.128 $\pm$ 0.002 \\
+\midrule
+\methodauto, no input features ($\lambda = 1$) & 0.228 $\pm$ 0.004 & 0.236 $\pm$ 0.002 & 0.198 $\pm$ 0.003 & 0.201 $\pm$ 0.004 \\
+\methodauto + input features & \textbf{0.261 $\pm$ 0.004} & \textbf{0.265 $\pm$ 0.004} & \textbf{0.234 $\pm$ 0.005} & \textbf{0.239 $\pm$ 0.005} \\
+\methodauto, no input features, shuffled & 0.157 $\pm$ 0.005 & 0.157 $\pm$ 0.005 & -- & -- \\
+\methodauto + input features, shuffled & 0.157 $\pm$ 0.005 & 0.157 $\pm$ 0.005 & -- & -- \\
+\bottomrule
+\end{tabular}

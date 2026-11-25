@@ -1,0 +1,495 @@
+[
+ {
+  "edge":9904,
+  "coauthor":"Edward A. Fox",
+  "true":[
+
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Automatic Document Metadata Extraction Using Support Vector Machines."
+  ]
+ },
+ {
+  "edge":17339,
+  "coauthor":"Zhaohui Zheng 0001",
+  "true":[
+   "CIKM",
+   "SIGIR"
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":true,
+  "nocd_eagg_correct":true,
+  "titles":[
+   "Incorporating query difference for learning retrieval functions in information retrieval.",
+   "Incorporating query difference for learning retrieval functions in world wide web search."
+  ]
+ },
+ {
+  "edge":17340,
+  "coauthor":"Haoying Fu",
+  "true":[
+   "CIKM",
+   "ICCV",
+   "ICML",
+   "SIGIR"
+  ],
+  "ours":"NIPS",
+  "nocd_eagg":"ICDM",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Incorporating query difference for learning retrieval functions in information retrieval.",
+   "Semi-supervised nonlinear dimensionality reduction.",
+   "Incorporating query difference for learning retrieval functions in world wide web search."
+  ]
+ },
+ {
+  "edge":17341,
+  "coauthor":"Gordon Sun",
+  "true":[
+   "CIKM",
+   "SIGIR"
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":true,
+  "nocd_eagg_correct":true,
+  "titles":[
+   "Incorporating query difference for learning retrieval functions in information retrieval.",
+   "Incorporating query difference for learning retrieval functions in world wide web search."
+  ]
+ },
+ {
+  "edge":17342,
+  "coauthor":"C. Lee Giles",
+  "true":[
+   "CIKM",
+   "SIGIR",
+   "WWW"
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":true,
+  "nocd_eagg_correct":true,
+  "titles":[
+   "Rule-based word clustering for text classification.",
+   "Automatic Document Metadata Extraction Using Support Vector Machines.",
+   "Two supervised learning approaches for name disambiguation in author citations."
+  ]
+ },
+ {
+  "edge":17343,
+  "coauthor":"Xiang Ji 0001",
+  "true":[
+   "CIKM",
+   "SIGIR"
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":true,
+  "nocd_eagg_correct":true,
+  "titles":[
+   "Correlating multilingual documents via bipartite graph modeling.",
+   "Domain-independent text segmentation using anisotropic diffusion and dynamic programming.",
+   "Robust sensor localization algorithm in wireless ad-hoc sensor networks."
+  ]
+ },
+ {
+  "edge":17344,
+  "coauthor":"Chris H. Q. Ding",
+  "true":[
+   "CIKM",
+   "ICDM",
+   "ICML",
+   "KDD",
+   "NIPS",
+   "PKDD",
+   "SDM",
+   "SIGIR"
+  ],
+  "ours":"KDD",
+  "nocd_eagg":"ICDM",
+  "ours_correct":true,
+  "nocd_eagg_correct":true,
+  "titles":[
+   "PageRank, HITS and a unified framework for link analysis.",
+   "R1-PCA: rotational invariant L1-norm principal component analysis for robust subspace factorization.",
+   "PageRank: HITS and a Unified Framework for Link Analysis."
+  ]
+ },
+ {
+  "edge":17345,
+  "coauthor":"Xiangmin Zhang",
+  "true":[
+
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Rule-based word clustering for document metadata extraction."
+  ]
+ },
+ {
+  "edge":17346,
+  "coauthor":"Hui Han 0001",
+  "true":[
+   "SIGIR"
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":true,
+  "nocd_eagg_correct":true,
+  "titles":[
+   "Rule-based word clustering for text classification.",
+   "Automatic Document Metadata Extraction Using Support Vector Machines.",
+   "Two supervised learning approaches for name disambiguation in author citations."
+  ]
+ },
+ {
+  "edge":17347,
+  "coauthor":"Xiaofeng He",
+  "true":[
+   "CIKM",
+   "ICDM",
+   "ICML",
+   "KDD",
+   "NIPS",
+   "PKDD",
+   "SDM",
+   "SIGIR"
+  ],
+  "ours":"KDD",
+  "nocd_eagg":"ICDM",
+  "ours_correct":true,
+  "nocd_eagg_correct":true,
+  "titles":[
+   "PageRank, HITS and a unified framework for link analysis.",
+   "R1-PCA: rotational invariant L1-norm principal component analysis for robust subspace factorization.",
+   "PageRank: HITS and a Unified Framework for Link Analysis."
+  ]
+ },
+ {
+  "edge":17348,
+  "coauthor":"Parry Husbands",
+  "true":[
+   "SDM",
+   "SIGIR"
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":true,
+  "nocd_eagg_correct":true,
+  "titles":[
+   "PageRank, HITS and a unified framework for link analysis.",
+   "PageRank: HITS and a Unified Framework for Link Analysis."
+  ]
+ },
+ {
+  "edge":17349,
+  "coauthor":"Horst D. Simon",
+  "true":[
+   "CIKM",
+   "ICDM",
+   "NIPS",
+   "PKDD",
+   "SDM",
+   "SIGIR"
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":true,
+  "nocd_eagg_correct":true,
+  "titles":[
+   "PageRank, HITS and a unified framework for link analysis.",
+   "Large-Scale SVD and Subspace-Based Methods for Information Retrieval.",
+   "PageRank: HITS and a Unified Framework for Link Analysis."
+  ]
+ },
+ {
+  "edge":17350,
+  "coauthor":"Eren Manavoglu",
+  "true":[
+   "SIGIR",
+   "WWW"
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":true,
+  "nocd_eagg_correct":true,
+  "titles":[
+   "Rule-based word clustering for text classification.",
+   "Automatic Document Metadata Extraction Using Support Vector Machines.",
+   "Rule-based word clustering for document metadata extraction."
+  ]
+ },
+ {
+  "edge":17351,
+  "coauthor":"Thomas F. Keefe",
+  "true":[
+
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Indexing Management for Distributed Linear Hash Files."
+  ]
+ },
+ {
+  "edge":17352,
+  "coauthor":"Jesse L. Barlow",
+  "true":[
+   "ICCV",
+   "ICML"
+  ],
+  "ours":"CVPR",
+  "nocd_eagg":"ICDM",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Semi-supervised nonlinear dimensionality reduction.",
+   "Efficient Block Noise Removal Based on Nonlinear Manifolds."
+  ]
+ },
+ {
+  "edge":17353,
+  "coauthor":"Ya Zhang 0002",
+  "true":[
+
+  ],
+  "ours":"KDD",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "A Time-Series Biclustering Algorithm for Revealing Co-Regulated Genes.",
+   "Towards discovering organizational structure from email corpus."
+  ]
+ },
+ {
+  "edge":17354,
+  "coauthor":"Rangachar Kasturi",
+  "true":[
+   "CVPR",
+   "ECCV"
+  ],
+  "ours":"CVPR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":true,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Spectral Clustering for Robust Motion Segmentation.",
+   "Support Vector Clustering Combined with Spectral Graph Partitioning.",
+   "Local Smoothing for Manifold Learning."
+  ]
+ },
+ {
+  "edge":17355,
+  "coauthor":"John Yen",
+  "true":[
+   "CIKM"
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Multi-task text segmentation and alignment based on weighted mutual information."
+  ]
+ },
+ {
+  "edge":17356,
+  "coauthor":"Ding Zhou",
+  "true":[
+   "CIKM",
+   "ICML",
+   "WWW"
+  ],
+  "ours":"KDD",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Towards discovering organizational structure from email corpus.",
+   "A new Mallows distance based metric for comparing clusterings.",
+   "R1-PCA: rotational invariant L1-norm principal component analysis for robust subspace factorization."
+  ]
+ },
+ {
+  "edge":17357,
+  "coauthor":"Zhenyue Zhang",
+  "true":[
+   "CVPR",
+   "ICML",
+   "NIPS"
+  ],
+  "ours":"NIPS",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":true,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Automatic Document Metadata Extraction Using Support Vector Machines.",
+   "Isometric Embedding and Continuum ISOMAP.",
+   "Spectral analysis of alignment in manifold learning."
+  ]
+ },
+ {
+  "edge":17358,
+  "coauthor":"Kostas Tsioutsiouliklis",
+  "true":[
+
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Two supervised learning approaches for name disambiguation in author citations.",
+   "Rule-based word clustering for document metadata extraction."
+  ]
+ },
+ {
+  "edge":17359,
+  "coauthor":"Wei Xu 0017",
+  "true":[
+
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "A hierarchical naive Bayes mixture model for name disambiguation in author citations."
+  ]
+ },
+ {
+  "edge":17360,
+  "coauthor":"Jia Li 0001",
+  "true":[
+   "ICML",
+   "WWW"
+  ],
+  "ours":"KDD",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "A new Mallows distance based metric for comparing clusterings.",
+   "Simultaneous Classification and Feature Clustering Using Discriminant Vector Quantization with Applications to Microarray Data Analysis.",
+   "Probabilistic models for discovering e-communities."
+  ]
+ },
+ {
+  "edge":17361,
+  "coauthor":"Xin Yang",
+  "true":[
+   "ICML"
+  ],
+  "ours":"NIPS",
+  "nocd_eagg":"ICDM",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Semi-supervised nonlinear dimensionality reduction."
+  ]
+ },
+ {
+  "edge":17362,
+  "coauthor":"Ming Gu 0002",
+  "true":[
+   "CIKM",
+   "ICDM",
+   "NIPS"
+  ],
+  "ours":"KDD",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Bipartite Graph Partitioning and Data Clustering.",
+   "A Min-max Cut Algorithm for Graph Partitioning and Data Clustering.",
+   "Spectral Relaxation for K-means Clustering."
+  ]
+ },
+ {
+  "edge":17363,
+  "coauthor":"Bing Li",
+  "true":[
+   "UAI"
+  ],
+  "ours":"CVPR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Linear Contour Learning: A Method for Supervised Dimension Reduction."
+  ]
+ },
+ {
+  "edge":17364,
+  "coauthor":"Jin Hyeong Park",
+  "true":[
+   "CVPR",
+   "ECCV"
+  ],
+  "ours":"CVPR",
+  "nocd_eagg":"ICDM",
+  "ours_correct":true,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Spectral Clustering for Robust Motion Segmentation.",
+   "Support Vector Clustering Combined with Spectral Graph Partitioning.",
+   "Local Smoothing for Manifold Learning."
+  ]
+ },
+ {
+  "edge":17365,
+  "coauthor":"Francesca Chiaromonte",
+  "true":[
+   "UAI"
+  ],
+  "ours":"CVPR",
+  "nocd_eagg":"ICDM",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Linear Contour Learning: A Method for Supervised Dimension Reduction."
+  ]
+ },
+ {
+  "edge":17366,
+  "coauthor":"Bingjun Sun",
+  "true":[
+   "CIKM"
+  ],
+  "ours":"SIGIR",
+  "nocd_eagg":"SIGIR",
+  "ours_correct":false,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Multi-task text segmentation and alignment based on weighted mutual information."
+  ]
+ },
+ {
+  "edge":17367,
+  "coauthor":"Jing Wang 0049",
+  "true":[
+   "NIPS"
+  ],
+  "ours":"NIPS",
+  "nocd_eagg":"ICDM",
+  "ours_correct":true,
+  "nocd_eagg_correct":false,
+  "titles":[
+   "Adaptive Manifold Learning."
+  ]
+ }
+]

@@ -1,0 +1,3 @@
+{"seed": 0, "method": "dynares", "features": null, "readout": "threshold", "onmi": 0.0281292013734387, "f1": 0.24780715460508856, "jaccard": 0.14946252862824694, "predicted": 27, "seconds": 394.7}
+{"seed": 0, "method": "dynares", "features": null, "readout": "edges", "onmi": 0.029205108071320943, "f1": 0.21172654910997057, "jaccard": 0.1259737773682698, "predicted": 27, "seconds": 394.7}
+{"seed": 0, "method": "dynares", "features": null, "readout": "union", "onmi": 0.026441170817586315, "f1": 0.2482756880389536, "jaccard": 0.14913879160451943, "predicted": 27, "seconds": 394.7}

@@ -1,0 +1,3 @@
+{"seed": 0, "method": "nocd", "features": null, "readout": "threshold", "onmi": 0.04301792811087329, "f1": 0.2554832100963568, "jaccard": 0.15654889941705452, "predicted": 27, "seconds": 437.3}
+{"seed": 0, "method": "nocd", "features": null, "readout": "edges", "onmi": 0.04262322568449255, "f1": 0.23604754126277389, "jaccard": 0.14366824494964603, "predicted": 27, "seconds": 437.3}
+{"seed": 0, "method": "nocd", "features": null, "readout": "union", "onmi": 0.04400441318489238, "f1": 0.254651316332815, "jaccard": 0.1556200912828298, "predicted": 27, "seconds": 437.3}

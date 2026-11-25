@@ -1,0 +1,16 @@
+\begin{tabular}{lcccc}
+\toprule
+Variant & F1 & Jaccard & ONMI & Held-out loss \\
+\midrule
+Feature-led, $\lambda = 1$ (earlier default) & 0.384 & 0.246 & 0.060 & 0.3442 \\
+Feature-led, $\lambda = 0.3$ & 0.389 & 0.250 & 0.067 & 0.3362 \\
+Feature-led, $\lambda = 0.1$ (default) & 0.392 & 0.253 & 0.071 & 0.3380 \\
+No marks, $\lambda = 0$ (NOCD + averaged features) & 0.359 & 0.233 & 0.125 & 0.3424 \\
+Structure first, then marks, $\lambda = 1$ & 0.360 & 0.231 & 0.100 & 0.3469 \\
+Structure first, then marks, $\lambda = 0.3$ & 0.354 & 0.228 & 0.108 & 0.3448 \\
+Structure-led, $\lambda = 1$ & 0.339 & 0.220 & 0.130 & 0.3547 \\
+Structure-led, $\lambda = 0.3$ & 0.339 & 0.220 & 0.127 & 0.3467 \\
+Structure-led, $M = 2K$ & 0.343 & 0.223 & 0.134 & 0.3532 \\
+Structure-led, $M = 4K$ & 0.333 & 0.216 & 0.128 & 0.3536 \\
+\bottomrule
+\end{tabular}

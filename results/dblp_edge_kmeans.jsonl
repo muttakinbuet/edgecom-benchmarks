@@ -1,0 +1,6 @@
+{"features": "edge_feats_title", "seed": 0, "onmi": 0.0, "f1": 0.3151760245043437, "jaccard": 0.1925360685233815}
+{"features": "edge_feats_title", "seed": 1, "onmi": 0.01140378878523197, "f1": 0.3109081711546505, "jaccard": 0.19002680962552687}
+{"features": "edge_feats_title", "seed": 2, "onmi": 0.022257717562633558, "f1": 0.3181049686128482, "jaccard": 0.1954158490308443}
+{"features": "edge_feats_title_outside", "seed": 0, "onmi": 0.002490286090980512, "f1": 0.2147323431175724, "jaccard": 0.12350734904283407}
+{"features": "edge_feats_title_outside", "seed": 1, "onmi": 0.0025737005363435914, "f1": 0.2168867972392396, "jaccard": 0.12424625650038054}
+{"features": "edge_feats_title_outside", "seed": 2, "onmi": 0.002533835222235467, "f1": 0.2212906173173333, "jaccard": 0.12844475269371514}

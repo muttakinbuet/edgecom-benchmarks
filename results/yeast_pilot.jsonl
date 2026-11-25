@@ -1,0 +1,11 @@
+{"seed": 0, "method": "edge_kmeans", "features": "edge_feats_evidence_notext", "readout": "edges", "onmi": 0.004104692682829778, "f1": 0.22771337746878745, "jaccard": 0.1420687399340784, "predicted": 93, "seconds": 31.7}
+{"seed": 0, "method": "edge_kmeans", "features": "edge_feats_evidence", "readout": "edges", "onmi": 0.007338512933074999, "f1": 0.23132106563855961, "jaccard": 0.14373632153641833, "predicted": 107, "seconds": 40.6}
+{"seed": 0, "method": "nocd", "features": null, "readout": "threshold", "onmi": 0.0905229275996844, "f1": 0.3132855036458349, "jaccard": 0.21136536801249198, "predicted": 125, "seconds": 345.8}
+{"seed": 0, "method": "nocd", "features": null, "readout": "edges", "onmi": 0.03403680596438994, "f1": 0.27368455177086165, "jaccard": 0.1821582557317017, "predicted": 32, "seconds": 345.8}
+{"seed": 0, "method": "nocd", "features": null, "readout": "union", "onmi": 0.08289918329155718, "f1": 0.31498440615519435, "jaccard": 0.21174706030526033, "predicted": 125, "seconds": 345.8}
+{"seed": 0, "method": "nocd_eagg", "features": "edge_feats_evidence", "readout": "threshold", "onmi": 0.0495155025723474, "f1": 0.26038043964269697, "jaccard": 0.1836159894978455, "predicted": 39, "seconds": 641.0}
+{"seed": 0, "method": "nocd_eagg", "features": "edge_feats_evidence", "readout": "edges", "onmi": 0.028819941500171434, "f1": 0.24580708550300132, "jaccard": 0.16532988773153778, "predicted": 22, "seconds": 641.0}
+{"seed": 0, "method": "nocd_eagg", "features": "edge_feats_evidence", "readout": "union", "onmi": 0.05172278202073703, "f1": 0.2448908047885292, "jaccard": 0.16150270327353755, "predicted": 42, "seconds": 641.0}
+{"seed": 0, "method": "nocd_eagg", "features": "edge_feats_evidence_notext", "readout": "threshold", "onmi": 0.05886478360622207, "f1": 0.2827167277614176, "jaccard": 0.1960621360881975, "predicted": 36, "seconds": 631.7}
+{"seed": 0, "method": "nocd_eagg", "features": "edge_feats_evidence_notext", "readout": "edges", "onmi": 0.014743848400076228, "f1": 0.22610136309770754, "jaccard": 0.14770829243426026, "predicted": 22, "seconds": 631.7}
+{"seed": 0, "method": "nocd_eagg", "features": "edge_feats_evidence_notext", "readout": "union", "onmi": 0.05709534050310893, "f1": 0.26446110257054517, "jaccard": 0.17877241995589804, "predicted": 41, "seconds": 631.7}
