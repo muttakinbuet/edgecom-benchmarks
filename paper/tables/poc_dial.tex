@@ -1,0 +1,17 @@
+\begin{tabular}{llcccccc}
+\toprule
+Background & Method & $\alpha = 1$ & $\alpha = 0.8$ & $\alpha = 0.6$ & $\alpha = 0.4$ & $\alpha = 0.2$ & $\alpha = 0$ \\
+\midrule
+10\% & \methodauto + input features & 0.961 & 0.961 & 0.958 & 0.673 & 0.508 & 0.528 \\
+ & NOCD + averaged features & 0.830 & 0.846 & 0.794 & 0.777 & 0.617 & 0.538 \\
+ & DynaResGCN + averaged features & 0.687 & 0.695 & 0.673 & 0.674 & 0.647 & 0.581 \\
+ & Edge-feature clustering & 0.958 & 0.957 & 0.950 & 0.493 & 0.445 & 0.464 \\
+ & NOCD (structure only) & 0.676 & 0.676 & 0.676 & 0.676 & 0.676 & 0.676 \\
+\midrule
+30\% & \methodauto + input features & 0.931 & 0.927 & 0.918 & 0.483 & 0.481 & 0.499 \\
+ & NOCD + averaged features & 0.762 & 0.771 & 0.726 & 0.621 & 0.537 & 0.503 \\
+ & DynaResGCN + averaged features & 0.628 & 0.641 & 0.630 & 0.622 & 0.573 & 0.529 \\
+ & Edge-feature clustering & 0.911 & 0.912 & 0.905 & 0.428 & 0.437 & 0.455 \\
+ & NOCD (structure only) & 0.550 & 0.550 & 0.550 & 0.550 & 0.550 & 0.550 \\
+\bottomrule
+\end{tabular}

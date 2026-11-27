@@ -162,7 +162,8 @@ def run_job(job):
     torch.set_num_threads(1)
     try:
         graph = {**GRAPH, "degree": job.get("degree", GRAPH["degree"])}
-        data = generate(seed=job["seed"], noise=job["noise"], snr=job["snr"], **graph)
+        data = generate(seed=job["seed"], noise=job["noise"], snr=job["snr"],
+                        align=job.get("align", 1.0), **graph)
         n, ei, truth = data["num_nodes"], data["edge_index"], data["communities"]
         k, method, seed = len(truth), job["method"], job["seed"]
         t0 = time.time()
@@ -247,6 +248,7 @@ def run_job(job):
             records.append({
                 **{k_: job[k_] for k_ in ("noise", "snr", "seed", "method")},
                 "degree": job.get("degree", GRAPH["degree"]),
+                "align": job.get("align", 1.0),
                 "readout": readout, **extra, **evaluate(pred, truth, n),
                 "kappa_mean": (float(model.concentrations().mean())
                                if method.startswith("markbp2") else None),
@@ -270,6 +272,8 @@ def main():
     parser.add_argument("--snr", type=float, nargs="+", default=[0.0, 0.25, 0.5, 1.0])
     parser.add_argument("--degree", type=float, nargs="+", default=[GRAPH["degree"]],
                         help="expected within-community degree (structure strength)")
+    parser.add_argument("--align", type=float, nargs="+", default=[1.0],
+                        help="share of the edge signal about the true community (the dial)")
     parser.add_argument("--seeds", type=int, default=20)
     parser.add_argument("--methods", nargs="+", default=METHODS)
     parser.add_argument("--workers", type=int, default=1)
@@ -284,12 +288,12 @@ def main():
     if out.exists():
         for line in open(out):
             r = json.loads(line)
-            done.add((r.get("degree", GRAPH["degree"]), r["noise"], r["snr"], r["seed"],
-                      r["method"]))
-    jobs = [{"degree": d, "noise": nz, "snr": s, "seed": seed, "method": m}
-            for d in args.degree for nz in args.noise for s in args.snr
+            done.add((r.get("degree", GRAPH["degree"]), r.get("align", 1.0), r["noise"],
+                      r["snr"], r["seed"], r["method"]))
+    jobs = [{"degree": d, "align": a, "noise": nz, "snr": s, "seed": seed, "method": m}
+            for d in args.degree for a in args.align for nz in args.noise for s in args.snr
             for seed in range(args.seeds) for m in args.methods
-            if (d, nz, s, seed, m) not in done]
+            if (d, a, nz, s, seed, m) not in done]
     logger.info(f"{len(jobs)} jobs ({len(done)} already done) on {args.workers} workers")
 
     def write(result):

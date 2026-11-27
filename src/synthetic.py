@@ -20,7 +20,18 @@ import numpy as np
 
 def generate(num_nodes: int = 2000, num_communities: int = 10, degree: float = 8.0,
              noise: float = 0.3, snr: float = 1.0, dim: int = 32,
-             membership_probs=(0.6, 0.3, 0.1), seed: int = 0) -> Dict:
+             membership_probs=(0.6, 0.3, 0.1), seed: int = 0,
+             align: float = 1.0) -> Dict:
+    """
+    align < 1 mixes in text about an unrelated grouping (the dial): every node
+    gets a random group g_u, and every edge's feature signal becomes
+
+        snr * (align * mu_c + (1 - align) * normalise(nu_{g_u} + nu_{g_v}))
+
+    (background edges keep only the group part). The group part is consistent
+    around each node, as real text is, but says nothing about the communities.
+    align = 1 reproduces the original generator exactly.
+    """
     rng = np.random.default_rng(seed)
     k = num_communities
 
@@ -61,7 +72,15 @@ def generate(num_nodes: int = 2000, num_communities: int = 10, degree: float = 8
     mu /= np.linalg.norm(mu, axis=1, keepdims=True)
     feats = rng.normal(scale=1.0 / np.sqrt(dim), size=(len(keys), dim))
     signal = labels >= 0
-    feats[signal] += snr * mu[labels[signal]]
+    feats[signal] += align * snr * mu[labels[signal]]
+    if align < 1.0:
+        # Drawn after everything above, so align = 1 leaves the graph unchanged
+        groups = rng.integers(0, k, num_nodes)
+        nu = rng.normal(size=(k, dim))
+        nu /= np.linalg.norm(nu, axis=1, keepdims=True)
+        pair = nu[groups[edge_index[0]]] + nu[groups[edge_index[1]]]
+        pair /= np.maximum(np.linalg.norm(pair, axis=1, keepdims=True), 1e-12)
+        feats += (1.0 - align) * snr * pair
     feats /= np.linalg.norm(feats, axis=1, keepdims=True)
 
     # Keep only nodes with at least one edge
