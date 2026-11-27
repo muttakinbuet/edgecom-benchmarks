@@ -19,11 +19,11 @@ import pandas as pd
 
 # (method, readout) -> label, color (validated categorical slots 1-5), marker, style
 SERIES = [
-    (("markbp", "edges"), "MarkBP (ours)", "#2a78d6", "o", "-"),
+    (("markbp", "edges"), "MarkBP-vMF", "#2a78d6", "o", "-"),
     (("edge_kmeans", "edges"), "Edge features only", "#eb6834", "s", "-"),
-    (("nocd_eagg", "threshold"), "NOCD + averaged edge features", "#1baf7a", "^", "-"),
+    (("nocd_eagg", "threshold"), "NOCD + averaged features", "#1baf7a", "^", "-"),
     (("nocd", "threshold"), "NOCD (structure only)", "#eda100", "D", "-"),
-    (("markbp_shuffle", "edges"), "MarkBP, shuffled features", "#e87ba4", "v", "--"),
+    (("markbp_shuffle", "edges"), "MarkBP-vMF, shuffled features", "#e87ba4", "v", "--"),
 ]
 INK, MUTED, GRID = "#1f1f1e", "#6b6a64", "#e4e3de"
 ROWS = [("overlap_exact", "Overlapping nodes:\nexact community set"),

@@ -11,7 +11,7 @@ LaTeX tables comparing MarkBP-auto with the published baselines.
   pairs gives p < 0.05.
 
 Restarts: MarkBP-auto + input features and the two strongest baselines (NOCD and
-DynaResGCN with averaged edge features) are also fitted with three restarts
+DynaResGCN with averaged features) are also fitted with three restarts
 (results/restarts/). For every (seed, feature set) the restart with the lowest
 held-out loss is kept, without labels; these runs form the "best of 3 restarts"
 rows, and the star test is repeated among them.
@@ -49,9 +49,9 @@ POC_ROWS = [("nocd", "NOCD", False), ("nocd_gat", "NOCD-GAT", False),
             ("cesna", "CESNA", True), ("edge_kmeans", "Edge clust.", True)]
 DBLP_ROWS = [("nocd", "NOCD"), ("nocd_gat", "NOCD-GAT"), ("link_comm", "Link communities"),
              ("dynares", "DynaResGCN"),
-             ("nocd_gine", "NOCD-GINE"), ("nocd_eagg", "NOCD + averaged edge features"),
-             ("nocd_eagg_shuffle", "NOCD + averaged edge features, shuffled"),
-             ("dynares_eagg", "DynaResGCN + averaged edge features"),
+             ("nocd_gine", "NOCD-GINE"), ("nocd_eagg", "NOCD + averaged features"),
+             ("nocd_eagg_shuffle", "NOCD + averaged features, shuffled"),
+             ("dynares_eagg", "DynaResGCN + averaged features"),
              ("cesna", "CESNA"), ("edge_kmeans", "Edge-feature clustering")]
 OURS = [("markbp_auto", r"\methodauto, no input features ($\lambda = 1$)"),
         ("markbp_autoin", r"\methodauto + input features")]
@@ -65,8 +65,8 @@ SUBSETS = [("results/dblp_cs_areas_10seeds.jsonl",
            ("results/dblp_rand30_s1.jsonl",
             "results/dblp_rand30_s1_ours_l01.jsonl", r"\textsc{Random-30}", "_rand30")]
 # Best of three restarts by held-out loss (method -> its restart row)
-RESTARTED = [("nocd_eagg", "NOCD + averaged edge features"),
-             ("dynares_eagg", "DynaResGCN + averaged edge features"),
+RESTARTED = [("nocd_eagg", "NOCD + averaged features"),
+             ("dynares_eagg", "DynaResGCN + averaged features"),
              ("markbp_autoin", r"\methodauto + input features")]
 R_SUFFIX = "_r3"
 RESTART_LABEL = ", best of 3 restarts"
