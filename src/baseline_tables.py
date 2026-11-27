@@ -35,7 +35,7 @@ import json
 from pathlib import Path
 
 import pandas as pd
-from scipy.stats import wilcoxon
+from scipy.stats import ttest_rel, wilcoxon
 
 FEATURE_SETS = [("edge_feats_title", "Title"),
                 ("edge_feats_title_abstract", "Title + abstract"),
@@ -243,6 +243,7 @@ def subsets_table(frames, metric="f1"):
     means = pd.DataFrame({label: {m: scored(df, m, metric).mean() for m, _ in methods}
                           for label, df in zip(labels, frames)})
     star = {}  # (column, method) pairs that win a paired test
+    tests = []
     single_baselines = [m for m, _ in DBLP_ROWS if not m.endswith("_shuffle")]
     restart_baselines = [m for m, _ in restarted if m != "markbp_autoin" + R_SUFFIX]
     for label, df in zip(labels, frames):
@@ -252,13 +253,21 @@ def subsets_table(frames, metric="f1"):
             if not pool or pd.isna(means.loc[ours_m, label]):
                 continue
             rival = max(pool, key=lambda m: means.loc[m, label])
-            ours, theirs = scored(df, ours_m, metric), scored(df, rival, metric)
-            if theirs.index.get_level_values("features").isna().all():
-                # Structure-only rival: pair by seed
-                ours, theirs = ours.groupby("seed").mean(), theirs.groupby("seed").mean()
-            diff = (ours - theirs).dropna()
-            if len(diff) and wilcoxon(diff).pvalue < 0.05:
-                star[label, ours_m if diff.mean() > 0 else rival] = True
+            # Seeds are the unit: average each method over feature sets per seed
+            ours = scored(df, ours_m, metric).groupby("seed").mean()
+            theirs = scored(df, rival, metric).groupby("seed").mean()
+            seeds = ours.index.intersection(theirs.index)
+            if len(seeds) > 1:
+                tests.append(((label, ours_m, rival),
+                              ttest_rel(ours[seeds], theirs[seeds]).pvalue,
+                              (ours[seeds] - theirs[seeds]).mean()))
+    # Holm correction over the comparisons in this table
+    tests.sort(key=lambda t: t[1])
+    running = 0.0
+    for rank, ((label, ours_m, rival), p, diff) in enumerate(tests):
+        running = max(running, (len(tests) - rank) * p)
+        if running < 0.05:
+            star[label, ours_m if diff > 0 else rival] = True
     best = {label: means.loc[[m for m, _ in methods if not m.endswith("_shuffle")], label].max()
             for label in labels}
 

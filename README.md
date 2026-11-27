@@ -1,6 +1,6 @@
-# When Do Edge Features Help Overlapping Community Detection?
+# Does Edge Text Help Overlapping Community Detection?
 
-Code for the TMLR submission *When Do Edge Features Help Overlapping Community
+Code for the TMLR submission *Does Edge Text Help Overlapping Community
 Detection? Two Benchmarks with Textual Edges*. It covers:
 
 - the two benchmarks: **DBLP-EF**, a rebuild of the DBLP overlapping-community

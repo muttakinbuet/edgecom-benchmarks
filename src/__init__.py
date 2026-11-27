@@ -1,1 +1,1 @@
-"""When Do Edge Features Help Overlapping Community Detection? (code)."""
+"""Does Edge Text Help Overlapping Community Detection? (code)."""
