@@ -2,61 +2,61 @@
  {
   "seed": 0,
   "method": "ours",
-  "f1": 0.4124,
-  "onmi": 0.0803,
+  "f1": 0.4155,
+  "onmi": 0.0809,
   "effective_venues": 7.03,
-  "effective_venues_unweighted": 7.37,
-  "max_venue_share_median": 0.325,
-  "edge_nmi": 0.385
+  "effective_venues_unweighted": 7.38,
+  "max_venue_share_median": 0.321,
+  "edge_nmi": 0.3826
  },
  {
   "seed": 0,
   "method": "nocd_eagg",
-  "f1": 0.3816,
-  "onmi": 0.1357,
-  "effective_venues": 6.91,
-  "effective_venues_unweighted": 5.46,
-  "max_venue_share_median": 0.4,
-  "edge_nmi": 0.4397
- },
- {
-  "seed": 1,
-  "method": "ours",
-  "f1": 0.4122,
-  "onmi": 0.0796,
-  "effective_venues": 7.12,
-  "effective_venues_unweighted": 7.57,
-  "max_venue_share_median": 0.352,
-  "edge_nmi": 0.3839
- },
- {
-  "seed": 1,
-  "method": "nocd_eagg",
-  "f1": 0.381,
-  "onmi": 0.1326,
-  "effective_venues": 6.35,
-  "effective_venues_unweighted": 5.6,
-  "max_venue_share_median": 0.405,
-  "edge_nmi": 0.4513
- },
- {
-  "seed": 2,
-  "method": "ours",
-  "f1": 0.4096,
-  "onmi": 0.0864,
+  "f1": 0.3473,
+  "onmi": 0.1363,
   "effective_venues": 7.08,
-  "effective_venues_unweighted": 7.52,
-  "max_venue_share_median": 0.319,
-  "edge_nmi": 0.3861
+  "effective_venues_unweighted": 4.94,
+  "max_venue_share_median": 0.451,
+  "edge_nmi": 0.4388
+ },
+ {
+  "seed": 1,
+  "method": "ours",
+  "f1": 0.4233,
+  "onmi": 0.0824,
+  "effective_venues": 7.05,
+  "effective_venues_unweighted": 7.29,
+  "max_venue_share_median": 0.356,
+  "edge_nmi": 0.3864
+ },
+ {
+  "seed": 1,
+  "method": "nocd_eagg",
+  "f1": 0.3771,
+  "onmi": 0.1326,
+  "effective_venues": 7.11,
+  "effective_venues_unweighted": 5.58,
+  "max_venue_share_median": 0.391,
+  "edge_nmi": 0.4267
+ },
+ {
+  "seed": 2,
+  "method": "ours",
+  "f1": 0.4183,
+  "onmi": 0.0953,
+  "effective_venues": 7.13,
+  "effective_venues_unweighted": 7.55,
+  "max_venue_share_median": 0.314,
+  "edge_nmi": 0.3819
  },
  {
   "seed": 2,
   "method": "nocd_eagg",
-  "f1": 0.4028,
-  "onmi": 0.1457,
-  "effective_venues": 6.23,
-  "effective_venues_unweighted": 5.37,
-  "max_venue_share_median": 0.451,
-  "edge_nmi": 0.4655
+  "f1": 0.3655,
+  "onmi": 0.1527,
+  "effective_venues": 6.56,
+  "effective_venues_unweighted": 5.97,
+  "max_venue_share_median": 0.4,
+  "edge_nmi": 0.4552
  }
 ]

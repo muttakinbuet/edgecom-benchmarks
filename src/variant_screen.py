@@ -48,18 +48,20 @@ logger = logging.getLogger(__name__)
 
 
 def variants(k):
+    # Every variant states its mark weight: MarkBPAuto's default changed from
+    # 1.0 to 0.1, and the screen compares against the earlier default 1.0
     return {
-        "base": {},
-        "uniform": {"coupled_init": "uniform"},
-        "uniform_m2": {"coupled_init": "uniform", "feature_clusters": 2 * k},
-        "uniform_m4": {"coupled_init": "uniform", "feature_clusters": 4 * k},
+        "base": {"mark_weight": 1.0},
+        "uniform": {"coupled_init": "uniform", "mark_weight": 1.0},
+        "uniform_m2": {"coupled_init": "uniform", "feature_clusters": 2 * k, "mark_weight": 1.0},
+        "uniform_m4": {"coupled_init": "uniform", "feature_clusters": 4 * k, "mark_weight": 1.0},
         "feat_l03": {"mark_weight": 0.3},
         "feat_l01": {"mark_weight": 0.1},
         "uniform_l03": {"coupled_init": "uniform", "mark_weight": 0.3},
         "l0": {"mark_weight": 0.0},
-        "struct_first": {"coupled_init": "structure"},
+        "struct_first": {"coupled_init": "structure", "mark_weight": 1.0},
         "struct_first_l03": {"coupled_init": "structure", "mark_weight": 0.3},
-        "struct_first_m2": {"coupled_init": "structure", "feature_clusters": 2 * k},
+        "struct_first_m2": {"coupled_init": "structure", "feature_clusters": 2 * k, "mark_weight": 1.0},
     }
 
 

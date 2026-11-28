@@ -190,7 +190,7 @@ def run_job(job):
             # Official DynaResGCN encoder: -G (identity input) or -X with
             # node-averaged edge features as the node attributes
             model = OverlappingCommunityModel(k, seed=seed, refit=False, encoder="dynares")
-            model.fit(n, ei, node_features=edge_feature_node_mean(n, ei, data["edge_features"])
+            model.fit(n, ei, input_edge_features=data["edge_features"]
                       if method == "dynares_eagg" else None)
             edge_pred = model.edge_assignments(ei)
             readouts["threshold"] = model.F > model.threshold
@@ -209,7 +209,8 @@ def run_job(job):
             feats = feature_variant(method.replace("markbp_autoin", "markbp")
                                     .replace("markbp_auto", "markbp"), data, seed)
             model = MarkBPAuto(k, seed=seed, cache_dir="data/cache/nocd_poc",
-                               input_features=inputs)
+                               input_features=inputs,
+                               mark_weight=job.get("mark_weight", 0.1))
             model.fit(n, ei, edge_features=feats)
             edge_pred = model.edge_assignments(ei)
             readouts["threshold"] = model.F > model.threshold
@@ -222,8 +223,7 @@ def run_job(job):
             if method == "nocd":
                 model.fit(n, ei)
             elif method == "nocd_eagg":
-                model.fit(n, ei, node_features=edge_feature_node_mean(
-                    n, ei, data["edge_features"]))
+                model.fit(n, ei, input_edge_features=data["edge_features"])
             else:
                 feats = feature_variant(method, data, seed)
                 v2 = method.startswith("markbp2")
@@ -249,6 +249,7 @@ def run_job(job):
                 **{k_: job[k_] for k_ in ("noise", "snr", "seed", "method")},
                 "degree": job.get("degree", GRAPH["degree"]),
                 "align": job.get("align", 1.0),
+                **({"mark_weight": job["mark_weight"]} if "mark_weight" in job else {}),
                 "readout": readout, **extra, **evaluate(pred, truth, n),
                 "kappa_mean": (float(model.concentrations().mean())
                                if method.startswith("markbp2") else None),
@@ -275,6 +276,8 @@ def main():
     parser.add_argument("--align", type=float, nargs="+", default=[1.0],
                         help="share of the edge signal about the true community (the dial)")
     parser.add_argument("--seeds", type=int, default=20)
+    parser.add_argument("--mark-weight", type=float, default=None,
+                        help="mark weight of MarkBP-auto (default 0.1); use a separate --out")
     parser.add_argument("--methods", nargs="+", default=METHODS)
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--out", default="results/poc_grid.jsonl")
@@ -294,6 +297,9 @@ def main():
             for d in args.degree for a in args.align for nz in args.noise for s in args.snr
             for seed in range(args.seeds) for m in args.methods
             if (d, a, nz, s, seed, m) not in done]
+    if args.mark_weight is not None:
+        for job in jobs:
+            job["mark_weight"] = args.mark_weight
     logger.info(f"{len(jobs)} jobs ({len(done)} already done) on {args.workers} workers")
 
     def write(result):

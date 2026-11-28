@@ -58,7 +58,7 @@ def fit(method, seed=SEED):
         logger.info(f"choice {model.choice}")
     else:
         model = OverlappingCommunityModel(k, seed=seed, refit=False, encoder="gcn")
-        model.fit(n, ei, node_features=edge_feature_node_mean(n, ei, feats))
+        model.fit(n, ei, input_edge_features=feats)
     labels = model.edge_assignments(ei)
     threshold = model.F > model.threshold
     member = threshold | edge_readout(n, ei, labels, k)

@@ -143,10 +143,10 @@ class MarkBPAuto:
                         refit=False, mark_weight=self.mark_weight,
                         mark_model="coupled", coupled_init=self.coupled_init,
                         feature_clusters=self.feature_clusters, **self.model_kwargs)
-                    node_features = (edge_feature_node_mean(num_nodes, edge_index, edge_features)
-                                     if self.input_features else None)
-                    self.model.fit(num_nodes, edge_index, node_features=node_features,
-                                   edge_features=edge_features)
+                    # Node inputs from training edges only (no held-out text)
+                    self.model.fit(num_nodes, edge_index, edge_features=edge_features,
+                                   input_edge_features=(edge_features if self.input_features
+                                                        else None))
                     self._features = edge_features
                     self.joint_val = float(self.model.best_val)
                     self.holdout_z = self._holdout_z(self.model.val_pairs)

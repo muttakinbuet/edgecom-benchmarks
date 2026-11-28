@@ -82,18 +82,16 @@ def run_method(method, k, num_nodes, edge_index, edge_feats, seed, args):
         model.fit(num_nodes, edge_index)
     elif method == "nocd_eagg":
         model = OverlappingCommunityModel(k, **common)
-        model.fit(num_nodes, edge_index,
-                  node_features=edge_feature_node_mean(num_nodes, edge_index, edge_feats))
+        model.fit(num_nodes, edge_index, input_edge_features=edge_feats)
     elif method in ("markbp", "markbp_shuffle", "markbp_eagg"):
         feats = edge_feats
         if method == "markbp_shuffle":
             feats = edge_feats[np.random.default_rng(seed).permutation(len(edge_feats))]
-        node_feats = (edge_feature_node_mean(num_nodes, edge_index, feats)
-                      if method == "markbp_eagg" else None)
+        node_inputs = feats if method == "markbp_eagg" else None
         model = OverlappingCommunityModel(k, mark_weight=args.mark_weight,
                                           kappa=args.kappa, mu_init=args.mu_init,
                                           **common)
-        model.fit(num_nodes, edge_index, node_features=node_feats, edge_features=feats)
+        model.fit(num_nodes, edge_index, edge_features=feats, input_edge_features=node_inputs)
         return model, feats
     elif method == "markbp_auto":
         # Pick the mark weight without labels: the one whose model best

@@ -9,6 +9,7 @@ per-seed means, and Holm-adjusted p-values over the whole family.
     python -m src.significance
 """
 import numpy as np
+from pathlib import Path
 import pandas as pd
 from scipy.stats import ttest_rel, wilcoxon
 
@@ -38,7 +39,10 @@ def load_patents(path):
     """Patent runs; MarkBP-auto with outside features comes from the run without
     the held-out check (*_nocheck.jsonl), as in the paper's table."""
     df = load(path)
-    nocheck = load(path.replace(".jsonl", "_nocheck.jsonl"))
+    nocheck_path = Path(path.replace(".jsonl", "_nocheck.jsonl"))
+    if not nocheck_path.exists() or nocheck_path.stat().st_size == 0:
+        return df  # current runs: the held-out check is off for every feature set
+    nocheck = load(str(nocheck_path))
     nocheck["method"] = nocheck["method"].str.replace("_nocheck", "")
     drop = (df["method"] == OURS) & df["features"].isin(OUTSIDE)
     return pd.concat([df[~drop], nocheck[nocheck["method"] == OURS]], ignore_index=True)

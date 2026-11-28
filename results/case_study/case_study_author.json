@@ -6,7 +6,7 @@
 
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -21,9 +21,9 @@
    "SIGIR"
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":true,
-  "nocd_eagg_correct":true,
+  "nocd_eagg_correct":false,
   "titles":[
    "Incorporating query difference for learning retrieval functions in information retrieval.",
    "Incorporating query difference for learning retrieval functions in world wide web search."
@@ -39,7 +39,7 @@
    "SIGIR"
   ],
   "ours":"NIPS",
-  "nocd_eagg":"ICDM",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -56,9 +56,9 @@
    "SIGIR"
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":true,
-  "nocd_eagg_correct":true,
+  "nocd_eagg_correct":false,
   "titles":[
    "Incorporating query difference for learning retrieval functions in information retrieval.",
    "Incorporating query difference for learning retrieval functions in world wide web search."
@@ -73,9 +73,9 @@
    "WWW"
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":true,
-  "nocd_eagg_correct":true,
+  "nocd_eagg_correct":false,
   "titles":[
    "Rule-based word clustering for text classification.",
    "Automatic Document Metadata Extraction Using Support Vector Machines.",
@@ -90,9 +90,9 @@
    "SIGIR"
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":true,
-  "nocd_eagg_correct":true,
+  "nocd_eagg_correct":false,
   "titles":[
    "Correlating multilingual documents via bipartite graph modeling.",
    "Domain-independent text segmentation using anisotropic diffusion and dynamic programming.",
@@ -129,7 +129,7 @@
 
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -143,9 +143,9 @@
    "SIGIR"
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":true,
-  "nocd_eagg_correct":true,
+  "nocd_eagg_correct":false,
   "titles":[
    "Rule-based word clustering for text classification.",
    "Automatic Document Metadata Extraction Using Support Vector Machines.",
@@ -183,9 +183,9 @@
    "SIGIR"
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":true,
-  "nocd_eagg_correct":true,
+  "nocd_eagg_correct":false,
   "titles":[
    "PageRank, HITS and a unified framework for link analysis.",
    "PageRank: HITS and a Unified Framework for Link Analysis."
@@ -203,9 +203,9 @@
    "SIGIR"
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":true,
-  "nocd_eagg_correct":true,
+  "nocd_eagg_correct":false,
   "titles":[
    "PageRank, HITS and a unified framework for link analysis.",
    "Large-Scale SVD and Subspace-Based Methods for Information Retrieval.",
@@ -220,9 +220,9 @@
    "WWW"
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":true,
-  "nocd_eagg_correct":true,
+  "nocd_eagg_correct":false,
   "titles":[
    "Rule-based word clustering for text classification.",
    "Automatic Document Metadata Extraction Using Support Vector Machines.",
@@ -235,8 +235,8 @@
   "true":[
 
   ],
-  "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "ours":"KDD",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -251,7 +251,7 @@
    "ICML"
   ],
   "ours":"CVPR",
-  "nocd_eagg":"ICDM",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -266,7 +266,7 @@
 
   ],
   "ours":"KDD",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"ICDM",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -282,9 +282,9 @@
    "ECCV"
   ],
   "ours":"CVPR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":true,
-  "nocd_eagg_correct":false,
+  "nocd_eagg_correct":true,
   "titles":[
    "Spectral Clustering for Robust Motion Segmentation.",
    "Support Vector Clustering Combined with Spectral Graph Partitioning.",
@@ -297,8 +297,8 @@
   "true":[
    "CIKM"
   ],
-  "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "ours":"WWW",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -314,7 +314,7 @@
    "WWW"
   ],
   "ours":"KDD",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -332,9 +332,9 @@
    "NIPS"
   ],
   "ours":"NIPS",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":true,
-  "nocd_eagg_correct":false,
+  "nocd_eagg_correct":true,
   "titles":[
    "Automatic Document Metadata Extraction Using Support Vector Machines.",
    "Isometric Embedding and Continuum ISOMAP.",
@@ -348,7 +348,7 @@
 
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -363,7 +363,7 @@
 
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -378,7 +378,7 @@
    "WWW"
   ],
   "ours":"KDD",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -394,7 +394,7 @@
    "ICML"
   ],
   "ours":"NIPS",
-  "nocd_eagg":"ICDM",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -410,9 +410,9 @@
    "NIPS"
   ],
   "ours":"KDD",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"ICDM",
   "ours_correct":false,
-  "nocd_eagg_correct":false,
+  "nocd_eagg_correct":true,
   "titles":[
    "Bipartite Graph Partitioning and Data Clustering.",
    "A Min-max Cut Algorithm for Graph Partitioning and Data Clustering.",
@@ -426,7 +426,7 @@
    "UAI"
   ],
   "ours":"CVPR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -441,9 +441,9 @@
    "ECCV"
   ],
   "ours":"CVPR",
-  "nocd_eagg":"ICDM",
+  "nocd_eagg":"CVPR",
   "ours_correct":true,
-  "nocd_eagg_correct":false,
+  "nocd_eagg_correct":true,
   "titles":[
    "Spectral Clustering for Robust Motion Segmentation.",
    "Support Vector Clustering Combined with Spectral Graph Partitioning.",
@@ -457,7 +457,7 @@
    "UAI"
   ],
   "ours":"CVPR",
-  "nocd_eagg":"ICDM",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -471,7 +471,7 @@
    "CIKM"
   ],
   "ours":"SIGIR",
-  "nocd_eagg":"SIGIR",
+  "nocd_eagg":"CVPR",
   "ours_correct":false,
   "nocd_eagg_correct":false,
   "titles":[
@@ -485,7 +485,7 @@
    "NIPS"
   ],
   "ours":"NIPS",
-  "nocd_eagg":"ICDM",
+  "nocd_eagg":"CVPR",
   "ours_correct":true,
   "nocd_eagg_correct":false,
   "titles":[

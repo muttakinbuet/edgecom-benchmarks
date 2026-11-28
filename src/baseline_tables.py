@@ -7,14 +7,11 @@ LaTeX tables comparing MarkBP-auto with the published baselines.
   the same for the other subsets (five seeds).
 * dblp_subsets_{f1,jaccard,onmi}.tex: all subsets, mean over seeds and feature
   sets. A star marks the better of MarkBP-auto + input features and the
-  strongest baseline when a paired Wilcoxon test over (seed, feature set)
-  pairs gives p < 0.05.
+  strongest baseline when a paired t-test on per-seed means gives a
+  Holm-adjusted p < 0.05.
 
-Restarts: MarkBP-auto + input features and the two strongest baselines (NOCD and
-DynaResGCN with averaged features) are also fitted with three restarts
-(results/restarts/). For every (seed, feature set) the restart with the lowest
-held-out loss is kept, without labels; these runs form the "best of 3 restarts"
-rows, and the star test is repeated among them.
+Restart rows (best of several fits by held-out loss) are supported but not
+reported in the paper: RESTARTED is empty.
 
 MarkBP-auto + input features comes from the *_ours_l01 files (mark weight 0.1,
 the current default); the ablation without input features keeps its runs at
@@ -65,9 +62,10 @@ SUBSETS = [("results/dblp_cs_areas_10seeds.jsonl",
            ("results/dblp_rand30_s1.jsonl",
             "results/dblp_rand30_s1_ours_l01.jsonl", r"\textsc{Random-30}", "_rand30")]
 # Best of three restarts by held-out loss (method -> its restart row)
-RESTARTED = [("nocd_eagg", "NOCD + averaged features"),
-             ("dynares_eagg", "DynaResGCN + averaged features"),
-             ("markbp_autoin", r"\methodauto + input features")]
+# Restart rows are no longer reported in the paper; set e.g.
+# [("nocd_eagg", "NOCD + averaged features"), ("markbp_autoin", r"\methodauto + input features")]
+# to add them back.
+RESTARTED = []
 R_SUFFIX = "_r3"
 RESTART_LABEL = ", best of 3 restarts"
 RESTART_FILES = {"": "results/restarts/cs_areas.jsonl",
@@ -274,8 +272,8 @@ def subsets_table(frames, metric="f1"):
     lines = [r"\begin{tabular}{l" + "c" * len(labels) + "}", r"\toprule",
              "Method & " + " & ".join(labels) + r" \\", r"\midrule"]
     for method, label in methods:
-        if method in (OURS[0][0], restarted[0][0]):
-            if method == restarted[0][0] and means.loc[method].isna().all():
+        if method == OURS[0][0] or (restarted and method == restarted[0][0]):
+            if restarted and method == restarted[0][0] and means.loc[method].isna().all():
                 break
             lines.append(r"\midrule")
         cells = []
@@ -342,8 +340,9 @@ def main():
             # Link communities is deterministic; its three seeds give identical results
             old = load("results/dblp_baselines.jsonl")
             dblp = pd.concat([dblp, old[old["method"] == "link_comm"]], ignore_index=True)
-        dblp = pd.concat([dblp, best_of_restarts(RESTART_FILES[suffix])],
-                         ignore_index=True)
+        if RESTARTED:
+            dblp = pd.concat([dblp, best_of_restarts(RESTART_FILES[suffix])],
+                             ignore_index=True)
         frames.append(dblp)
         for metric in ("f1", "jaccard", "onmi"):
             (out / f"dblp_baselines{suffix}_{metric}.tex").write_text(dblp_table(dblp, metric))

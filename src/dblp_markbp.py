@@ -125,8 +125,7 @@ def run_job(job):
             eagg = method.removesuffix("_shuffle") in ("nocd_eagg", "dynares_eagg")
             model = OverlappingCommunityModel(k, seed=seed, refit=False, encoder=enc,
                                               init_seed=init_seed)
-            node_feats = edge_feature_node_mean(n, ei, feats) if eagg else None
-            model.fit(n, ei, node_features=node_feats,
+            model.fit(n, ei, input_edge_features=feats if eagg else None,
                       edge_features=feats if enc == "gine" else None)
             extra["val"] = float(model.best_val)
             readouts["threshold"] = model.F > model.threshold

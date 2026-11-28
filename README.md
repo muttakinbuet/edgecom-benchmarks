@@ -98,9 +98,10 @@ python src/dblp_markbp.py --subset data/subsets/cs_areas_le2006_main \
 
 The method names are listed at the top of `src/dblp_markbp.py`. Our method is
 `markbp_autoin` (MarkBP-auto + input features); it is implemented in
-`src/markbp_auto.py` and `src/ocd_models.py`. `--restarts 0 1 2` fits every
-model several times; the restart with the lowest held-out loss is selected
-without labels (`scripts/run_restarts_main.sh`, `src/restarts.py`).
+`src/markbp_auto.py` and `src/ocd_models.py`. Node inputs averaged from edge
+features (the `*_eagg` baselines and `markbp_autoin`) are built from training
+edges only, so the held-out edges used for early stopping never reach the
+encoder.
 
 ## Reproducing the paper
 
@@ -110,7 +111,8 @@ without labels (`scripts/run_restarts_main.sh`, `src/restarts.py`).
 | DBLP-EF baselines and subsets | `src/dblp_markbp.py` | `src/baseline_tables.py --out paper/tables` |
 | Institutions as ground truth | `src/dblp_markbp.py` on `cs_areas_le2006_aff` | in `src/baseline_tables.py` |
 | Pat-G | `src/dblp_markbp.py` on the two patent subsets | in `src/baseline_tables.py` |
-| Restarts | `scripts/run_restarts.sh`, `scripts/run_restarts_main.sh` | `src/restarts.py` |
+| Alignment dial, placebo | `src/poc.py --align`, `src/placebo_features.py` + `src/dblp_markbp.py` | `src/plot_dial.py` |
+| Significance tests | | `src/significance.py` |
 | Variant screen, sensitivity | `src/variant_screen.py`, `src/sensitivity.py` | same scripts |
 | Case study, per-venue results | `src/case_study.py`, `src/per_community.py` | same scripts |
 | Protein complexes (appendix) | `src/yeast.py` | same script |
@@ -137,7 +139,6 @@ DynaResGCN paper. Clone it into `external/dynaresgcn` (we used commit `51bfd6a`)
 
 ```
 src/            benchmark builders, models, baselines, experiments, table scripts
-scripts/        shell drivers for the restart experiments
 results/        JSON-lines results behind every table of the paper
 paper/tables/   the generated LaTeX tables (output of the table scripts)
 paper/figures/  the generated figures

@@ -198,6 +198,17 @@ class EdgeSampler:
         return e, np.vstack([a, b])
 
 
+def edge_mean_inputs(num_nodes: int, edge_index: np.ndarray,
+                     feats: np.ndarray) -> np.ndarray:
+    """Node inputs as the mean features of the given (training) edges."""
+    u, v = edge_index
+    rows = np.concatenate([u, v])
+    cols = np.concatenate([np.arange(len(u)), np.arange(len(u))])
+    inc = sp.csr_matrix((np.ones(len(rows)), (rows, cols)), shape=(num_nodes, len(u)))
+    deg = np.asarray(inc.sum(axis=1)).ravel()
+    return np.asarray((inc @ feats) / np.maximum(deg, 1)[:, None], dtype=np.float32)
+
+
 class OverlappingCommunityModel:
     """
     Train NOCD (mark_weight = 0) or MarkBP (mark_weight > 0, edge_features given).
@@ -311,7 +322,8 @@ class OverlappingCommunityModel:
     # -- training -----------------------------------------------------------
     def fit(self, num_nodes: int, edge_index: np.ndarray,
             node_features: Optional[np.ndarray] = None,
-            edge_features: Optional[np.ndarray] = None) -> np.ndarray:
+            edge_features: Optional[np.ndarray] = None,
+            input_edge_features: Optional[np.ndarray] = None) -> np.ndarray:
         """
         Unsupervised training. A fraction of the edges (and as many non-edges)
         is held out: the model is trained on the rest, stopped when the
@@ -319,6 +331,10 @@ class OverlappingCommunityModel:
         as self.best_val for label-free model selection. With refit=True the
         model is then retrained on all edges for the selected number of epochs.
         No community labels are used.
+
+        input_edge_features: node inputs are the mean of these features over a
+        node's *training* edges, so the held-out edges never reach the encoder
+        (use instead of a precomputed node_features).
         """
         if (self.mark_weight > 0 or self.encoder_type == "gine") and edge_features is None:
             raise ValueError("MarkBP needs edge features")
@@ -326,6 +342,11 @@ class OverlappingCommunityModel:
         perm = rng.permutation(edge_index.shape[1])
         num_val = max(1, int(self.val_fraction * edge_index.shape[1]))
         val_idx, train_idx = perm[:num_val], perm[num_val:]
+        if input_edge_features is not None:
+            if node_features is not None:
+                raise ValueError("give node_features or input_edge_features, not both")
+            node_features = edge_mean_inputs(num_nodes, edge_index[:, train_idx],
+                                             input_edge_features[train_idx])
         _, val_non_edges = EdgeSampler(num_nodes, edge_index[:, val_idx], num_val, rng,
                                        all_edge_index=edge_index).sample()
         val = (edge_index[:, val_idx], val_non_edges)

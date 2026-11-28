@@ -91,7 +91,7 @@ def run_job(job):
             F, labels = model.F, model.edge_assignments(ei)
         elif job["method"] == "nocd_eagg":
             model = OverlappingCommunityModel(k, seed=seed, refit=False)
-            model.fit(n, ei, node_features=edge_feature_node_mean(n, ei, feats))
+            model.fit(n, ei, input_edge_features=feats)
             F, labels = model.F, model.edge_assignments(ei)
         else:
             model = MarkBPAuto(k, seed=seed, cache_dir="data/cache/nocd_dblp",
